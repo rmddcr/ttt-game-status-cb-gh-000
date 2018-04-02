@@ -17,12 +17,11 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  
+
   if  board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     return false
   elsif full?(board)
     return false
-    
   else
     i=0
     while i<9
@@ -42,7 +41,7 @@ def won?(board)
 
       end
         return false
-  
+
       end
 
 end
