@@ -18,20 +18,20 @@ def won?(board)
   WIN_COMBINATIONS.each do |combination|
       if (board[combination[0]]=="O" && board[combination[1]]=="O" && board[combination[2]]=="O") ||
          (board[combination[0]]=="X" && board[combination[1]]=="X" && board[combination[2]]=="X")
-          return true
+          return combination
           break
       end
-      
+
     end
     return false
-    
+
   end
 
 
 
 
 # def won?(board)
-# 
+#
 #   if  board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 #     return false
 #   elsif full?(board)
@@ -42,22 +42,22 @@ def won?(board)
 #       puts i
 #       combination=WIN_COMBINATIONS[i]
 #         if (board[combination[0]]=="X" && board[combination[1]]=="X" && board[combination[2]]=="X")
-# 
+#
 #             return combination
-# 
+#
 #         elsif (board[combination[0]]=="O" && board[combination[1]]=="O" && board[combination[2]]=="O")
-# 
+#
 #           return combination
 #         else
-# 
+#
 #         end
 #         i=i+1
-# 
+#
 #       end
 #         return false
-# 
+#
 #       end
-# 
+#
 # end
 
 
@@ -83,29 +83,16 @@ def draw?(board)
 end
 
 
-
-
-
-def draw?(board)
-  if full?(board) 
-    i=0
-    while i<9
-      puts i
-      combination=WIN_COMBINATIONS[i]
-        if (board[combination[0]]=="X" && board[combination[1]]=="X" && board[combination[2]]=="X")
-
-            return 
-
-        elsif (board[combination[0]]=="O" && board[combination[1]]=="O" && board[combination[2]]=="O")
-
-          return combination
-        else
-
-        end
-        i=i+1
-
-      end
-        return false
-
+def over?(board)
+  if won?(board)||draw?(board)||full?(board)
+    return true
+  else 
+    return false
   end
 end
+
+def winner(board)
+  array=won?(board)
+  if condition
+    
+  end
