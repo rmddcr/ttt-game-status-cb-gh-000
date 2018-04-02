@@ -17,34 +17,41 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
+  
+  if  board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    return false
+  elsif full?(board)
+    return false
+    
+  else
+    i=0
+    while i<9
+      puts i
+      combination=WIN_COMBINATIONS[i]
+        if (board[combination[0]]=="X" && board[combination[1]]=="X" && board[combination[2]]=="X")
 
-  i=0
-  while i<9
-  combination=WIN_COMBINATIONS[i]
+            return combination
 
-  i=i+1
-    if (board[combination[0]]=="X" && board[combination[1]]=="X" && board[combination[2]]=="X")
+        elsif (board[combination[0]]=="O" && board[combination[1]]=="O" && board[combination[2]]=="O")
 
-      return combination
+          return combination
+        else
 
-    elsif (board[combination[0]]=="O" && board[combination[1]]=="O" && board[combination[2]]=="O")
+        end
+        i=i+1
 
-        return combination
-    else
-
-    end
-
-
-
-  end
-  return false
+      end
+        return false
+  
+      end
 
 end
 
 def full?(board)
-  index=-1
-  board.all?  do |symbol|
-    index +=1
-    position_taken(board,index)
+  index=0
+  while index <9
+    if board[index]==" "
+      return false
   end
+    return true
 end
