@@ -23,17 +23,17 @@ def won?(board)
 
   i=i+1
     if (board[combination[0]]=="X" && board[combination[1]]=="X" && board[combination[2]]=="X")
-      
+
       return combination
 
     elsif (board[combination[0]]=="O" && board[combination[1]]=="O" && board[combination[2]]=="O")
-        
+
         return combination
     else
-      
+
     end
-    
-    
+
+
 
   end
   return false
