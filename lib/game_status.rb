@@ -93,6 +93,8 @@ end
 
 def winner(board)
   array=won?(board)
-  if condition
-    
+  if array!=false
+    return board[array[0]]
+  else
+    return nil
   end
