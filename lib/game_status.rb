@@ -51,6 +51,8 @@ def full?(board)
   while index <9
     if board[index]==" "
       return false
+    end
+    index +=1
   end
     return true
 end
