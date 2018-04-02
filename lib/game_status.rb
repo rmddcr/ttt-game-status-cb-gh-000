@@ -17,9 +17,7 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  if board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    return nil
-  end
+
   i=0
   while i<9
   combination=WIN_COMBINATIONS[i]
